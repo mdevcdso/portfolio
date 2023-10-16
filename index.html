@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- <div class="color-ball1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div> -->
+
+    <div class="presentation">
+        <main class="block">
+            <section class="flex flex-col justify-center items-center">
+                
+                <div style="transition-delay: 100ms;">
+                    <h1>
+                        Bonjour, je suis <span class="prenom-nom">Marion Candusso</span>.
+                    </h1>
+                </div>
+                <div class="text-center mb-16" style="transition-delay: 200ms;">
+                    <h2 class="big-heading">
+                        Apprentie développeuse web.
+                    </h2>
+                </div>
+                <div>
+                    <h3 class="text-center mb-12">
+                        Pour parcourir mon site, veuillez choisir l'une des options ci-dessous :
+                    </h3>
+                    <div class="options_menu flex flex-row justify-center items-center top-1\/2 w-full h-1\/2">
+                        <a href="presentation.html">
+                            <div class="mx-2">
+                                <button class="btn">
+                                    Présentation de la société
+                                </button>
+                            </div>
+                        </a>
+                        <a href="projets.html">
+                            <div class="mx-2">
+                                <button class="btn">
+                                    Projets
+                                </button>
+                            </div>
+                        </a>
+                        <a href="veille.html">
+                            <div class="mx-2">
+                                <button class="btn">
+                                    Veille informatique
+                                </button>
+                            </div>
+                        </a>
+                        <a href="/pdf/CV_Marion_Candusso.pdf" download="CV">
+                            <div class="mx-2">
+                                <button class="btn">
+                                    Télécharger le CV
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- <div class="color-ball2 bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-400"></div> -->
+        </main>
+    </div>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        }
+
+        section{
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(45deg, #141951, #370f79);;
+        background-size: 400% 400%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        @keyframes animate{
+        0%{
+            background-position: 0 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+        }
+        100%{
+            background-position: 0 50%;
+        }
+        }
+    </style>
+</body>
+</html>

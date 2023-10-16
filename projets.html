@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A_propos</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <link href="./script.js" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar border-b border-black">
+            <div class="navbar-logo">
+                <a href="index.html">MC.</a>
+            </div>
+            <div class="navbar-menu">
+                <ol>
+                    <li>
+                        <a href="presentation.html">
+                            Présentation de la société
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projets.html">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="veille.html">
+                            Veille informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pdf/CV_Marion_Candusso.pdf" download="CV">
+                            CV
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profil">
+        <div class="flex flex-col justify-center items-center">
+            <div class="flex justify-center items-center space-x-8"> 
+                <h1 class="titre">
+                    <span class="font-bold" style="color: hsl(261deg 80% 48%);">|</span>  Projets
+                </h1>
+            </div>
+
+            <div class="parent">
+                <div class="rounded-container inner-container1">
+                    <button class="div1"> 
+                        <img src="/img/assoweb.PNG" alt="Assoweb">
+                    </button>
+                </div>
+                <div class="background-popup">
+                    <div id="popup1" class="popup">
+                        <button class="close-button" onclick="closePopup('popup1, background-popup')">X</button>
+                        <h2 class="titre-projet">Mail Cleaner</h2>
+                        <p>Description du projet 1...</p>
+                    </div>
+                </div>
+                
+                <div class="rounded-container inner-container2">
+                    <button class="div2">
+                        <img src="/img/fbz-logo.svg" alt="Frianbiz">
+                    </button>
+                </div>
+                <div class="background-popup">
+                    <div id="popup2" class="popup">
+                        <button class="close-button" onclick="closePopup('popup2, background-popup')">X</button>
+                        <h2 class="titre-projet">Filtre carroussel (Site Vitrine Frianbiz)</h2>
+                        <p>Description du projet 2...</p>
+                    </div>
+                </div>
+
+                <div class="rounded-container inner-container2">
+                    <button class="div2">
+                        <img src="/img/fbz-logo.svg" alt="Frianbiz">
+                    </button>
+                </div>
+                <div class="background-popup">
+                    <div id="popup3" class="popup">
+                        <button class="close-button" onclick="closePopup('popup3, background-popup')">X</button>
+                        <h2 class="titre-projet">Formulaire de contact – Page de Recrutement (Site Vitrine Frianbiz)</h2>
+                        <p>Description du projet 3...</p>
+                    </div>
+                </div>
+
+                <div class="rounded-container inner-container3" style="display: flex; justify-content: center;">
+                    <button class="div3">
+                        <img src="/img/cpp-logo.png" alt="Cpp" style="width: 4.5rem; height: 4.5rem;">
+                    </button>
+                </div>
+
+                <div class="rounded-container">
+                    <button class="div5"></button>
+                </div>
+                <div class="rounded-container">
+                    <button class="div6"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex justify-around items-center">
+            <div>
+                <div class="mb-1">
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Réseaux sociaux
+                    </h1>
+                </div>
+                <div>
+                    <ul class="social-icon">
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-discord"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex flex-col space-y-2">
+                <div>
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Menu
+                    </h1>
+                </div>
+                <div>
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="presentation.html">Présentation de la société</a></li>
+                        <li class="menu__item"><a class="menu__link" href="projets.html">Projets</a></li>
+                        <li class="menu__item"><a class="menu__link" href="veille.html">Veille informatique</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">CV</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="relative flex flex-wrap justify-center items-center text-white sfthin" style="font-size: larger;">
+                &copy; Marion Candusso | Tout droit réservé
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // Récupérez tous les boutons des projets
+        const projectButtons = document.querySelectorAll('.parent button');
+
+        // Récupérez toutes les popups
+        const popups = document.querySelectorAll('.popup');
+
+        const background = document.querySelector('.background-popup');
+
+        // Ajoutez un gestionnaire d'événement clic à chaque bouton
+        projectButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            // Masquez toutes les popups
+            popups.forEach((popup) => {
+            popup.style.display = 'none';
+            background.style.display = 'none';
+            });
+
+            // Récupérez la popup correspondante
+            const popup = document.getElementById(`popup${index + 1}`);
+            
+            // Affichez la popup
+            popup.style.display = 'none';
+            background.style.display = 'none';
+        });
+        });
+
+        // Ajoutez un gestionnaire d'événement clic pour masquer la popup lorsque l'utilisateur clique en dehors de la popup
+        document.addEventListener('click', (event) => {
+        if (!event.target.classList.contains('popup') && !event.target.classList.contains('parent')) {
+            // Masquez toutes les popups
+            popups.forEach((popup) => {
+            popup.style.display = 'block';
+            background.style.display = 'flex';
+            });
+        }
+        });
+
+        // Ajoutez un gestionnaire d'événement clic pour fermer la popup lorsque l'utilisateur clique sur le bouton de fermeture
+        const closeButton = document.querySelectorAll('.close-button');
+        closeButton.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            event.stopPropagation(); // Empêche la propagation du clic au parent (le popup)
+            const popupId = button.parentElement.id;
+            closePopup(popupId);
+            closeButton('background-popup');
+        });
+        });
+
+    </script>
+</body>
+</html>

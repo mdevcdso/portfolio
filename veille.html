@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A_propos</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar border-b border-black">
+            <div class="navbar-logo">
+                <a href="index.html">MC.</a>
+            </div>
+            <div class="navbar-menu">
+                <ol>
+                    <li>
+                        <a href="presentation.html">
+                            Présentation de la société
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projets.html">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="veille.html">
+                            Veille informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pdf/CV_Marion_Candusso.pdf">
+                            CV
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profil">
+        <div class="flex justify-center items-center">
+            <h1>
+                <p class="purple-color font-bold">|</p>Veille technologique
+            </h1>
+        </div>
+
+        <div class="veille">
+            <h1>Qu'est ce qu'une veille technologique ?</h1>
+            <p>
+                La veille technologique est un processus essentiel dans le domaine de l'informatique qui traite des technologies de l'information. 
+                Ces technologies consistent à rester constamment informé des évolutions et des nouveautés des dernières technologies,
+                ainsi que de surveiller activement les avancées dans les domaines tels que les langages de programmation, les architectures informatiques, les frameworks, les outils de développement,
+                 les bases de données et bien d'autres. 
+                 Cette surveillance permet de rester à jour et de comprendre comment les nouvelles technologies pourraient impacter les projets informatiques futurs.
+                Pour cela, nous utilisons diverses sources d'information comme les sites web spécialisés, les blogs techniques, les forums de discussion, les conférences en ligne et les réseaux sociaux professionnels. 
+                En résumé, la veille technologique aide à maintenir nos compétences à jour et à nous adapter aux changements rapides de l'environnement technologique, crucial dans le parcours académique et professionnel.
+            </p>
+        </div>
+
+        <div class="veille mt-12">
+            <h1>
+                Veille technologique
+            </h1>
+            <iframe src="/pdf/Rapport_veille_techno_Marion_Candusso.pdf" width="100%" height="600px"></iframe>
+        </div>
+
+        <div class="veille mt-12">
+            <h1>
+                Conclusion de la veille technologique
+            </h1>
+            <p>
+                Les différentes sources d'information que j'ai présentées dans ce dossier illustrent la richesse et la diversité des ressources disponibles pour rester informé dans le domaine du développement web et mobile. 
+                Grâce à YouTube, j'ai pu profiter de tutoriels interactifs et de présentations sur les dernières tendances en matière de développement, notamment en apprenant sur les avantages des Progressive Web Apps (PWA). 
+                Les sites d'informations en ligne tels que The Verge, Frandroid et Medium m'ont permis de rester à jour sur les langages de programmation, les innovations logicielles et les actualités des grandes entreprises technologiques.
+                Les réseaux sociaux, tels que Reddit et Linkedin, ont joué un rôle essentiel en me permettant de suivre des discussions, des groupes et des influenceurs spécialisés dans le développement web et mobile.
+                En outre, les blogs de développeurs ont offert une perspective unique grâce à leurs articles détaillés et leurs exemples de code concrets.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex justify-around items-center">
+            <div>
+                <div class="mb-1">
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Réseaux sociaux
+                    </h1>
+                </div>
+                <div>
+                    <ul class="social-icon">
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-discord"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex flex-col space-y-2">
+                <div>
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Menu
+                    </h1>
+                </div>
+                <div>
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="presentation.html">Présentation de la société</a></li>
+                        <li class="menu__item"><a class="menu__link" href="projets.html">Projets</a></li>
+                        <li class="menu__item"><a class="menu__link" href="veille.html">Veille informatique</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">CV</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="relative flex flex-wrap justify-center items-center text-white sfthin" style="font-size: larger;">
+                &copy; Marion Candusso | Tout droit réservé
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        //VEILLE
+        function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr)}
+
+        function makeSpans (selector) {
+        var _document$querySelect = document.querySelectorAll(selector)
+        var _document$querySelect2 = _toArray(_document$querySelect)
+        var elements = _document$querySelect2.slice(0)
+        
+        return elements.map(function (element) {
+            var text = element.innerText.split('')
+            var spans = text.map(function (letter){
+            return '<span>' + letter + '</span>'
+            }).join('')
+            return element.innerHTML = spans
+        })
+        }
+
+        // usuage with single selector
+        makeSpans('h1')
+    </script>
+</body>
+</html>
