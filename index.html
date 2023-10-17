@@ -12,9 +12,6 @@
 </head>
 
 <body>
-
-    <!-- <div class="color-ball1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div> -->
-
     <div class="presentation">
         <main class="block">
             <section class="flex flex-col justify-center items-center">
@@ -65,38 +62,34 @@
                     </div>
                 </div>
             </section>
-            <!-- <div class="color-ball2 bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-400"></div> -->
         </main>
     </div>
 
     <style>
-        * {
-        margin: 0;
-        padding: 0;
-        outline: 0;
-        }
+        body  {
+            background-image: url('https://images.pexels.com/photos/907485/pexels-photo-907485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size:cover;
+            -webkit-animation: slidein 100s;
+            animation: slidein 100s;
 
-        section{
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(45deg, #141951, #370f79);;
-        background-size: 400% 400%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
+            -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
 
-        @keyframes animate{
-        0%{
-            background-position: 0 50%;
-        }
-        50%{
-            background-position: 100% 50%;
-        }
-        100%{
-            background-position: 0 50%;
-        }
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;              
+            }
+
+            @-webkit-keyframes slidein {
+            from {background-position: top; background-size:3000px; }
+            to {background-position: -100px 0px;background-size:2750px;}
+            }
+
+            @keyframes slidein {
+            from {background-position: top;background-size:3000px; }
+            to {background-position: -100px 0px;background-size:2750px;}
         }
     </style>
 </body>

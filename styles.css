@@ -79,28 +79,23 @@
 /* PRESENTATION SOCIETE */
 
 .presentation {
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
-  /* padding-left: 5%;
-  padding-right: 5%; */
+  align-items: center; 
+  padding-left: 5%;
+  padding-right: 5%;
   height: 100vh;
 }
 
 section h1 {
   margin: 0px 0px 30px 4px;
-  color: rgb(90, 90, 90);
-  font-size: 3rem;
-  line-height: 10rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  transform: skewX(-10deg);
-  justify-content: center;
-  align-items: center;
+  color: white;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 400;
 }
 
 .prenom-nom {
-  /* color: rgb(50, 49, 49); */
   color: rgb(255, 255, 255);
   font-weight: 400;
   font-size: 24px;
@@ -161,24 +156,6 @@ section p {
   border-radius: 5%;
   z-index: 10;
   box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0.2);
-}
-
-.color-ball1 {
-  display: flex;
-  justify-content: center;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  z-index: 12;
-}
-
-.color-ball2 {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  bottom: 0;
-  right: 0;
-  z-index: 30;
 }
 
 /* Boutons des items du menu */
@@ -246,7 +223,7 @@ section p {
 .profil {
   margin-top: 50px;
   margin-bottom: 61px;
-  padding: 110px 80px 60px 80px;
+  padding: 110px 60px 60px 60px;
 }
 
 .profil p {
@@ -387,15 +364,11 @@ section p {
 
 .titre {
   color: rgb(90, 90, 90);
-  font-size: 3rem;
-  line-height: 10rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   text-transform: uppercase;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   font-weight: 700;
-  transform: skewX(-10deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .prefixe {
@@ -418,14 +391,6 @@ section p {
 
 .veille h1 {
   color: rgb(74, 1, 163);
-  font-weight: 600;
-  font-size: 1.75rem;
-  line-height: 2rem;
-  margin-bottom: 30px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .veille p {
