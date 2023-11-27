@@ -249,10 +249,10 @@ section p {
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 35px;
-  grid-row-gap: 35px;
+  grid-column-gap: 64px;
+  grid-row-gap: 63px;
 }
 
 .parent button img {
@@ -550,6 +550,7 @@ footer {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #070707;
   padding-bottom: 20px;
   position: relative;
   line-height: 1.2;
@@ -564,4 +565,175 @@ footer {
 .row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.col-g h3 {
+  font-family: 'sfblack';
+  letter-spacing: 4px;
+  color: #070707;
+}
+
+/* Timeline */
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: rgb(186, 203, 215);
+  top: 0;
+  bottom: 0;
+  left: 3%;
+  margin-left: -3px;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  /*width: 50%;*/
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #7dacf8;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  color: whitesmoke;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: rgb(136, 141, 147) 10px 20px 30px -15px;
+}
+
+.content h2 {
+  color: #070707;
+  padding: 5px;
+}
+  
+/* Full-width containers */
+.container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+}
+  
+/* Make sure that all arrows are pointing leftwards */
+.container::before {
+  left: 3.8em;
+}
+
+/* Make sure all circles are at the same spot */
+.right::after {
+  /*left: 15px;*/
+  left: 3%;
+  transform: translate(-50%, 0);
+  background-color: #fbfafa;
+}
+  
+/* Make all right containers behave like the left ones */
+.right {
+left: 0%;
+}
+.content_box {
+  font-style: italic;
+  /*padding: 10px;*/
+}
+
+.row button {
+  margin-top: 30px;
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.row button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #a2d9ea;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.row button span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.row button svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.row button:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.row button:hover svg {
+  transform: translateX(0);
+}
+
+.row button:active {
+  transform: scale(0.95);
 }
