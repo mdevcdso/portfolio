@@ -81,7 +81,7 @@
   src: url(/fonts/QueensidesLight.ttf);
 }
 
-/* PRESENTATION SOCIETE */
+/* ACCUEIL */
 
 .presentation {
   display: flex;
@@ -224,7 +224,7 @@ section p {
 
 .profil {
   margin-top: 50px;
-  margin-bottom: 61px;
+  margin-bottom: 20px;
   padding: 110px 60px 60px 60px;
 }
 
@@ -243,6 +243,49 @@ section p {
 .divider {
   border-left: 1px solid rgb(241, 248, 252);
   height: 70px;
+}
+
+/* PRESENTATION SOCIETE */
+
+.section-container {
+  padding: 20px;
+  max-width: 100%;
+}
+
+section h3 {
+  color: #514f4f;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+table {
+  width: 100%;
+}
+
+tbody {
+  line-height: 35px;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  border-top: 1px solid #514f4f;
+  margin: 10px 0 10px 0;
+}
+
+.other-title {
+  background-color: #dadada;
+  width: 100%;
+}
+
+.client-td {
+  display: flex;
+}
+
+.client-td a {
+  padding: 20px 20px 20px 26px;
+  margin-top: 5px;
 }
 
 /*PROJETS*/

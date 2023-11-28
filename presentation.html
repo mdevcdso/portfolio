@@ -8,7 +8,7 @@
     <link href="./dist/output.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
 </head>
-<body>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
 
     <header class="header">
         <nav class="navbar border-b border-black">
@@ -61,7 +61,177 @@
         </div>
     </section>
 
-    <section class="container">
+    <section id="renseignements" class="section-container">
+        <h3 class="tab_title">
+            Renseignements juridiques
+        </h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="arrow">
+                        Date de création
+                    </td>
+                    <td class="desc">
+                        15-04-2008
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Forme juridique
+                    </td>
+                    <td class="desc">
+                        SAS (Société par Actions Simplifiée)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Adresse postale
+                    </td>
+                    <td>
+                        <a href="https://www.societe.com/entreprises/3_av%20du%20quebec/91140_VILLEBON%20SUR%20YVETTE.html" class="lien_secondaire">
+                            3 Avenue du Québec, 91140, VILLEBON-SUR-YVETTE
+                        </a>
+                    </td>
+                </tr>
+                <tr class="other-title">
+                    <td colspan="3">
+                        <span>
+                            Numéros d'identification
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        SIREN
+                    </td>
+                    <td class="desc">
+                        503616666
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        SIRET 
+                    </td>
+                    <td class="desc">
+                        50361666600049
+                    </td>
+                </tr>
+                <tr class="other-title">
+                    <td colspan="3">
+                        Taille de l'entreprise
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Effectif 
+                    </td>
+                    <td class="desc">
+                        8
+                    </td>
+                    <td>
+                        <a href="https://www.frianbiz.com/a-propos">
+                            <button class="bouton">
+                                Organigramme
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Capital social 
+                    </td>
+                    <td class="desc">
+                        3 605,00 €
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Chiffre d'affaire 
+                    </td>
+                    <td class="desc">
+                        288 000,00 €
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="dirigeant" class="section-container">
+        <h3>
+            Dirigeant de la société
+        </h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="arrow">
+                        Nom
+                    </td>
+                    <td class="desc">
+                        MALTEM CONSULTING GROUP
+                    </td>
+                    <td>
+                        <a href="http://www.maltem.com/" class="flex justify-center items-center">
+                            <img src="/img/logo-maltem.png" alt="Maltem" class="pt-4 h-8 society_image">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Depuis le
+                    </td>
+                    <td class="desc">
+                        01-11-2018
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        SIREN
+                    </td>
+                    <td class="desc">
+                        480333269
+                    </td>
+                </tr>
+                <tr>
+                    <td class="arrow">
+                        Adresse postale
+                    </td>
+                    <td class="desc">
+                        91 rue du Faubourg Saint-Honoré, 75008, PARIS
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="client" class="section-container">
+        <h3>
+            Clients
+        </h3>
+        <div class="client-tab">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="client-td">
+                            <a href="https://www.geostaff.fr/" class="client-a flex justify-center items-center">
+                                <img src="/img/geostaff.png" alt="Geostaff" class="pt-4 h-8 society_image">
+                            </a>
+                            <a href="https://www.orange.fr/" class="client-a flex justify-center items-center">
+                                <img src="/img/orange.png" alt="Orange" class="pt-4 h-8 society_image">
+                            </a>
+                            <a href="https://www.vinci-energies.com" class="client-a flex justify-center items-center">
+                                <img src="/img/vinci.png" alt="Vinci" class="pt-4 h-8 society_image">
+                            </a>
+                            <a href="https://bunchm.com/" class="client-a flex justify-center items-center">
+                                <img src="/img/bunchm.svg" alt="Bunchm" class="pt-4 h-8 society_image">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+    </section>
+
+    <!-- <section class="container">
         <div class="timeline-block timeline-block-right">
            <div class="marker"></div>
            <div class="veille">
@@ -136,7 +306,7 @@
                  </div>
             </div>
          </div>
-    </section>
+    </section> -->
 
     <footer>
         <div class="flex justify-around items-center">
