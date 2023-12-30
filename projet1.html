@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assoweb</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <link href="./script.js" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar border-b border-black">
+            <div class="navbar-logo">
+                <img class="photo_profil" src="/img/pp.jpg" alt="photo-profil">
+                <a href="index.html">MC.</a>
+            </div>
+            <div class="navbar-menu">
+                <ol>
+                    <li>
+                        <a href="presentation.html">
+                            Présentation de la société
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projets.html">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="veille.html">
+                            Veille informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="a-propos.html">
+                            A propos
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profil">
+        <div class="flex flex-col justify-center items-center">
+            <div class="flex justify-center items-center space-x-8"> 
+                <h1 class="titre">
+                    <span class="font-bold" style="color: rgb(246, 0, 0);">|</span>  Gestionnaire de spams
+                </h1>
+            </div>
+
+            <div id="project-description-1" class="project-description">
+                <h3>Présentation</h3>
+                <div style="display: flex;">
+                    <p> Le projet Mail Cleaner représente une solution innovante axée sur la gestion efficace des e-mails en éliminant les messages indésirables et malveillants de la boîte de réception. Développé avec une combinaison de langages PHP et SQL, ce système vise à optimiser la sécurité et la propreté des boîtes mail en identifiant et en triant les e-mails considérés comme du spam.
+                    
+                        Fonctionnalités clés :
+                        
+                        Filtrage de Spam : Le cœur du projet réside dans son mécanisme sophistiqué de filtrage des e-mails. Grâce à des algorithmes avancés, le Mail Cleaner analyse le contenu des messages pour identifier les caractéristiques typiques du spam.
+                        
+                        Base de Données (BDD) : L'utilisation du langage SQL permet une intégration fluide avec la base de données. Les informations pertinentes sur les e-mails identifiés comme spam sont stockées de manière organisée, offrant une traçabilité pour des actions ultérieures.
+                        
+                        Identification des Adresses Malveillantes : Chaque e-mail considéré comme du spam est associé à une adresse mail d'origine. Le système détermine la raison pour laquelle cette adresse est considérée comme malveillante, fournissant ainsi des informations détaillées sur les motifs du filtrage.
+                        
+                        Nettoyage Automatique : Une fois que les e-mails indésirables sont identifiés et les informations correspondantes sont stockées dans la base de données, le Mail Cleaner peut automatiquement supprimer ces messages, assurant ainsi une boîte de réception propre et sécurisée.
+                        
+                        Interface Utilisateur Intuitive : Le projet intègre une interface utilisateur conviviale, permettant aux utilisateurs de visualiser les statistiques de filtrage, d'ajuster les paramètres et de prendre des décisions manuelles si nécessaire.
+                        
+                        Technologies Utilisées :
+                        
+                        PHP : En tant que langage de programmation principal, PHP alimente la logique métier du Mail Cleaner, permettant un traitement rapide et efficace des e-mails.
+                        
+                        SQL : La gestion des données est réalisée à l'aide de requêtes SQL, assurant la persistance des informations dans la base de données pour des références futures.
+                        
+                        Le projet Mail Cleaner s'impose comme une solution essentielle pour les utilisateurs cherchant à maintenir la sécurité de leur boîte de réception en éliminant de manière proactive les e-mails indésirables. En combinant une approche technologique avancée avec une interface utilisateur accessible, il offre une solution complète pour un nettoyage efficace et automatisé des boîtes mail.
+                    </p>
+                    <img src="/img/bdd.PNG" alt="bdd" style="height: 35rem;">
+                </div>
+
+                <div style="margin-top: 2rem;"></div>
+
+                <h3>Les Technologies utilisées</h3>
+                <div>
+                    <span>PHP</span>
+                    <span>MySql</span>
+                </div>
+
+                <div style="margin-top: 2rem;"></div>
+
+                <h3>Code</h3>
+                <div class="card">
+                    <div class="header-card">
+                        <div class="top">
+                        <div class="circle">
+                            <span class="red circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="yellow circle2"></span>
+                        </div>
+                        <div class="circle">
+                            <span class="green circle2"></span>
+                        </div>
+                        <div class="title">
+                            <p id="title2">Mail Cleaner</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="area">
+                            .card {
+                                width: 300px;
+                                height: 400px;
+                                margin: 0 auto;
+                                background-color: #24233b;
+                                border-radius: 8px;
+                                z-index: 1;
+                                box-shadow: 0px 10px 10px rgb(73, 70, 92);
+                                transition: 0.5s;
+                            }
+                            
+                            .card:hover {
+                                transform: translateY(-7px);
+                                box-shadow: 0px 10px 10px black;
+                            }
+                            
+                            .top {
+                                display: flex;
+                                align-items: center;
+                                padding-left: 10px;
+                            }
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex justify-around items-center">
+            <div>
+                <div class="mb-1">
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Réseaux sociaux
+                    </h1>
+                </div>
+                <div>
+                    <ul class="social-icon">
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-discord"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex flex-col space-y-2">
+                <div>
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Menu
+                    </h1>
+                </div>
+                <div>
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="presentation.html">Présentation de la société</a></li>
+                        <li class="menu__item"><a class="menu__link" href="projets.html">Projets</a></li>
+                        <li class="menu__item"><a class="menu__link" href="veille.html">Veille informatique</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">CV</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="relative flex flex-wrap justify-center items-center text-white sfthin" style="font-size: larger;">
+                &copy; Marion Candusso | Tout droit réservé
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
