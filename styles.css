@@ -458,7 +458,7 @@ tr {
 
 .card {
   width: auto;
-  height: 400px;
+  height: 500px;
   margin: 0 auto;
   background-color: #24233b;
   border-radius: 8px;
@@ -515,9 +515,9 @@ tr {
 
 #code {
   width: 80rem;
-  height: 344px;
+  height: 430px;
   resize: none;
-  background-color: rgb(73, 70, 92);
+  background-color: #24233b;
   border-radius: 5px;
   border: none;
   color: white;

@@ -47,13 +47,310 @@
         <div class="flex flex-col justify-center items-center">
             <div class="flex justify-center items-center space-x-8"> 
                 <h1 class="titre">
-                    <span class="font-bold" style="color: rgb(246, 0, 0);">|</span>  Ajout de features pour le site Frianbiz
+                    <span class="font-bold" style="color: rgb(246, 0, 0);">|</span>  Carroussel de tags pour la Catégorisation d'Articles
                 </h1>
             </div>
 
             <div id="project-description-2" class="project-description">
-                <h2>Présentation</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor justo id turpis rutrum, eu tincidunt urna tempus. Sed malesuada est ut odio elementum, in convallis lectus efficitur.</p>
+                <h3 style="font-size: 25px;">Présentation</h3>
+                <div style="display: block;">
+                    <p>Ce projet dédié à la catégorisation d'articles de la section "Blogs" du site vitrine Frianbiz, a été conçu pour offrir aux utilisateurs une expérience de recherche plus intuitive et efficace, en leur permettant de découvrir et de trier facilement les articles en fonction de leurs intérêts.</p>
+                    <p>Le Carrousel de Tags est une solution qui vise à simplifier la navigation à travers une variété d'articles, en les identifiant par des tags.</p>
+                    <p>Ce projet, résultat d'une combinaison de conception soignée et de fonctionnalités pratiques, vise à améliorer la convivialité de la plateforme et à offrir aux utilisateurs un accès rapide à l'information pertinente.</p>
+                    
+                    <br>
+
+                    <h4 style="font-size: 20px;"><strong>Fonctionnalités :</strong></h4>
+                    <ul>
+                        <li><strong>Filtrage d'articles :</strong> Le cœur du projet réside dans son mécanisme sophistiqué de filtrage des e-mails. Grâce à des algorithmes avancés, le Mail Cleaner analyse le contenu des messages pour identifier les caractéristiques typiques du spam.</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 50px;"></div>
+
+                <img src="img/tags.jpg" alt="tags" style="height: 40rem;">
+
+                <div style="margin-top: 4rem;"></div>
+
+                <h3 style="font-size: 25px;">Les Technologies utilisées</h3>
+                <div>
+                    <span>Laravel</span>
+                    <span>Scss</span>
+                </div>
+
+                <div style="margin-top: 2rem;"></div>
+
+                <h3 style="font-size: 25px;">Code</h3>
+                <div class="card">
+                    <div class="header-card">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">BlogController.php</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="area">
+                            <?php
+
+                            namespace App\Http\Controllers\Front;
+
+                            use App\Http\Controllers\Controller;
+                            use App\Models\BlogPost;
+                            use App\Models\Tag;
+
+                            class BlogController extends Controller
+                            {
+                                public function index()
+                                {
+                                    $selected_tags = request()->input('tags', []);
+                                    $blogs = BlogPost::with('tags')->published();
+
+                                    if (!empty($selected_tags)) {
+                                        $blogs->whereHas('tags', function ($query) use ($selected_tags) {
+                                            $query->whereIn('id', $selected_tags);
+                                        });
+                                    }
+
+                                    $tags = Tag::withCount('blogs')
+                                        ->get()
+                                        ->sortByDesc(function ($tag) use ($selected_tags) {
+                                            $coeff = in_array($tag->id, $selected_tags) ? 1000 : 1;
+                                            return $tag->blogs->count() * $coeff;
+                                        });
+
+                                    $blogs = $blogs
+                                        ->orderBy('published_at', 'desc')
+                                        ->paginate(config('pagination.public_blog_posts_per_page'))
+                                        ->onEachSide(1)
+                                        ->withQueryString();
+                                    return view('front.blogs.index', compact('blogs', 'tags', 'selected_tags'));
+                                }
+
+                                public function show(BlogPost $blog)
+                                {
+                                    return view('front.blogs.show', compact('blog'));
+                                }
+                            }
+                        </textarea>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px;"></div>
+
+                <div class="card">
+                    <div class="header-card">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">Tag.php</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="area">
+                            <?php
+
+                            namespace App\Models;
+
+                            use Illuminate\Database\Eloquent\Factories\HasFactory;
+                            use Illuminate\Database\Eloquent\Model;
+
+                            class Tag extends Model
+                            {
+                                use HasFactory;
+
+                                /**
+                                * The attributes that are mass assignable.
+                                *
+                                * @var array
+                                */
+                                protected $fillable = ['name'];
+
+                                public function blogs()
+                                {
+                                    return $this->belongsToMany(BlogPost::class, 'blog_posts_tags');
+                                }
+                            }
+                        </textarea>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px;"></div>
+
+                <div class="card">
+                    <div class="header_card">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">index.blade.php</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="area">
+                            @extends('front.layouts.app')
+
+                            @section('title', __('front.layout.title', ['title' => __('front.blogs.title')]))
+
+                            @section('content')
+                                <div class="relative">
+                                    <h1 class="title">Bienvenue sur le Blog Frianbiz</h1>
+                                    <div class="max-w-6xl mx-auto mb-24">
+                                        <form id="tag-filter" class="mx-5">
+                                            <div class="overflow-x-auto" id="tag-filter">
+                                                <div class="w-full flex flex-nowrap my-2">
+                                                @foreach($tags as $tag)
+                                                    <div class="flex-none tag-btn mr-2 rounded-full">
+                                                            <label>
+                                                                <input name="tags[]" type="checkbox" value="{{$tag->id}}" {{ in_array($tag->id, $selected_tags) ? 'checked' : '' }}>
+                            <span class="flex items-center">
+                                                                    @if(in_array($tag->id, $selected_tags))
+                                                                        <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#ffffff}</style><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>
+                                                                    @endif
+                                                                    {{$tag->name}} ({{$tag->blogs()->count()}})
+                                                                </span>
+                                                            </label>
+                                                        
+                                                    </div>
+                                                @endforeach
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div id="blog-posts">
+                                        @foreach ($blogs as $key => $blog)
+                                            <div class="relative mb-12 blog-post" data-tags="{{implode(',', $blog->tags->pluck('name')->toArray())}}">
+                                                @php
+                                                    $pixel = '';
+                                                    switch ($key%4) {
+                                                        case 0:
+                                                            $pixel = 'blue';
+                                                            break;
+                                                        case 2:
+                                                            $pixel = 'red';
+                                                            break;
+                                                    }
+                                                @endphp
+                                                @include('front.components.blog', ['blog' => $blog, 'pixel' => $pixel])
+                                            </div>
+                                        @endforeach
+                                        </div>
+                                        {{ $blogs->links('front.components.pagination') }}
+                                    </div>
+                                </div>
+                            @endsection
+
+                            @section('scripts')
+                                <script>
+                                    (function() {
+                                        const tagButtons = document.querySelectorAll('input[type="checkbox"]');
+
+                                        function filterArticles() {
+                                            document.getElementById("tag-filter").submit();
+                                        }
+
+                                        tagButtons.forEach(button => {
+                                            button.addEventListener('change', filterArticles);
+                                        });
+                                    })();
+                                </script>
+                            @endsection
+                        </textarea>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px;"></div>
+
+                <div class="card">
+                    <div class="header-card">
+                        <div class="top">
+                            <div class="circle">
+                                <span class="red circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="yellow circle2"></span>
+                            </div>
+                            <div class="circle">
+                                <span class="green circle2"></span>
+                            </div>
+                            <div class="title">
+                                <p id="title2">custom-components.scss</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <textarea readonly="" name="code" id="code" class="area">
+                            .tag {
+                                @apply h-14 px-9 text-xl mr-5 mb-5;
+                            }
+                            }
+                            
+                            .tag-btn {
+                            label input {
+                                position: absolute;
+                                display: none;
+                                color: #fff !important;
+                            }
+                            
+                            input + span {
+                                @apply text-fbz-blue rounded-full px-2 py-1 border border-fbz-blue cursor-pointer;
+                            }
+                            
+                            input:checked + span {
+                                @apply bg-fbz-blue text-white;
+                            }
+                            }
+                            
+                            .tag-btn {
+                            transition: transform 0.3s;
+                            position: relative;
+                            z-index: 1;
+                            }
+                            
+                            .selected {
+                            background-color: #e2e8f0; /* Couleur de fond pour indiquer la sélection */
+                            transform: translateX(-50%); /* Déplacement à gauche */
+                            z-index: 2;
+                            }
+                            
+                            .selected .tag-cross {
+                            display: inline-block;
+                            margin-left: 4px;
+                            color: #718096; /* Couleur de la croix */
+                            cursor: pointer;
+                            }
+                            
+                            .tag-cross:hover {
+                            cursor: pointer;
+                            }
+                        </textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
