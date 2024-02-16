@@ -27,7 +27,7 @@
 }
 
 .photo_profil {
-  width: 4rem;
+  width: 3rem;
   height: auto;
   border-radius: 50%;
 }
@@ -707,6 +707,7 @@ footer {
 /* A PROPOS */
 
 #about {
+  margin: 15rem 0 15rem 0;
   padding: 60px 0;
   overflow: hidden;
 }
@@ -740,6 +741,32 @@ footer {
   font-family: 'sfblack';
   letter-spacing: 4px;
   color: #070707;
+}
+
+.social-icons a {
+  display: inline-block;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: #495057;
+  color: #fff!important;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  margin-right: 1rem;
+}
+
+.fab {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-linkedin-in:before {
+  content: "\f0e1";
 }
 
 /* Timeline */

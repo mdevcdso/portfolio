@@ -13,7 +13,7 @@
     <header class="header">
         <nav class="navbar border-b border-black">
             <div class="navbar-logo">
-                <img class="photo_profil" src="/img/pp.jpg" alt="photo-profil">
+                <img class="photo_profil" src="/img/pp_index.png" alt="photo-profil">
                 <a href="index.html">MC.</a>
             </div>
             <div class="navbar-menu">
@@ -47,14 +47,14 @@
         <div class="flex flex-col justify-center items-center">
             <div class="flex justify-center items-center space-x-8"> 
                 <h1 class="titre">
-                    <span class="font-bold" style="color: rgb(246, 0, 0);">|</span>  Application de Gestion de Tâches
+                    <span class="font-bold" style="color: rgb(246, 0, 0);">|</span>  Application de Gestion de Tâches 📅
                 </h1>
             </div>
 
             <div id="project-description-3" class="project-description">
                 <h3 style="font-size: 25px;">Présentation</h3>
                 <div style="display: block;">
-                    <p>Task_Manage_App est une application iOS développée en Swift avec l'IDE Xcode. Elle a été conçue en suivant l'architecture <strong>MVVM</strong> (Modèle-Vue-Modèle-Vue). 📝✅</p>
+                    <p>Task_Manage_App est une application iOS développée en Swift avec l'IDE Xcode. Elle a été conçue en suivant l'architecture <strong>MVVM</strong> (Modèle-Vue-Vue-Modèle). 📝✅</p>
                     
                     <br>
                     
@@ -93,461 +93,50 @@
 
                 <h3 style="font-size: 25px;">Les Technologies utilisées</h3>
                 <div>
-                    <span>Swift</span>
+                    <img src="img/swift.png" alt="Swift">
                 </div>
 
                 <div style="margin-top: 2rem;"></div>
 
                 <h3 style="font-size: 25px;">Code</h3>
-                <div class="card">
-                    <div class="header-card">
-                        <div class="top">
-                        <div class="circle">
-                            <span class="red circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="yellow circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="green circle2"></span>
-                        </div>
-                        <div class="title">
-                            <p id="title2">ContentView.swift</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="code-container">
-                        <textarea readonly="" name="code" id="code" class="area">
-                            import SwiftUI
-
-                            struct ContentView: View {
-                                @ObservedObject var viewModel: TaskViewModel
-                                @State private var isAddingTask = false
-                                @State private var selectedTask: Task? = nil
-                                @State private var isShowingAddTaskView = false
-                                @State private var newTaskTitle = ""
-                                @State private var newTaskDescription = ""
-                                @State private var newTaskDueDate = Date()
-
-                                private let dateFormatter: DateFormatter = {
-                                    let formatter = DateFormatter()
-                                    formatter.dateStyle = .short
-                                    formatter.timeStyle = .short
-
-                                    return formatter
-                                }()
-
-                                func getTaskStateColor(task: Task) -> Color {
-                                    let state = viewModel.stateTask(task: task)
-                                    if state == "En retard" {
-                                        return Color.red
-                                    } else if state == "À faire" {
-                                        return Color.blue
-                                    } else if state == "En suspend" {
-                                        return Color.orange
-                                    } else if state == "Terminée" {
-                                        return Color.green
-                                    } else {
-                                        return Color.black
-                                    }
-                                }
-
-                                var body: some View {
-                                    TabView {
-                                        NavigationView {
-                                            List(viewModel.tasks) { task in
-                                                NavigationLink(destination: TaskDetailView(viewModel: viewModel, task: task)) {
-                                                    VStack(alignment: .leading) {
-                                                        Text("\(task.title)")
-
-                                                            .font(.headline)
-
-                                                        Text(getTaskStateLabel(task: task))
-
-                                                            .font(.subheadline)
-
-                                                            .foregroundColor(getTaskStateColor(task: task))
-
-                                                        Text("Echéance : \(task.dueDate, formatter: dateFormatter)")
-
-                                                                .font(.subheadline)
-
-                                                        Text("Description : \(task.description)")
-
-                                                            .font(.subheadline)
-
-                                                    }
-                                                }
-
-                                                .onTapGesture {
-
-                                                    selectedTask = task
-
-                                                }
-                                            }
-
-                                            .navigationBarTitle("Liste des tâches")
-
-                                            .navigationBarItems(trailing: Button(action: {
-
-                                                isShowingAddTaskView.toggle()
-
-                                            }) {
-
-                                                Image(systemName: "plus")
-
-                                            })
-
-                                            .sheet(isPresented: $isShowingAddTaskView) {
-
-                                                NavigationView {
-
-                                                    Form {
-
-                                                        Section(header: Text("Nouvelle Tâche")) {
-
-                                                            TextField("Titre", text: $newTaskTitle)
-
-                                                            TextField("Description", text: $newTaskDescription)
-
-                                                            DatePicker("Date d'échéance", selection: $newTaskDueDate, displayedComponents: .date)
-
-                                                        }
-
-                                                        Section {
-
-                                                            Button(action: {
-
-                                                                viewModel.addTask(title: newTaskTitle, dueDate: newTaskDueDate, description: newTaskDescription)
-
-                                                                isShowingAddTaskView = false
-
-                                                                newTaskTitle = ""
-
-                                                                newTaskDescription = ""
-
-                                                                newTaskDueDate = Date()
-
-                                                            }) {
-
-                                                                Text("Ajouter")
-
-                                                            }
-
-                                                        }
-
-                                                    }
-
-                                                    .navigationBarTitle("Nouvelle Tâche")
-
-                                                    .navigationBarItems(trailing: Button("Annuler") {
-
-                                                        isShowingAddTaskView = false
-
-                                                        newTaskTitle = ""
-
-                                                        newTaskDescription = ""
-
-                                                        newTaskDueDate = Date()
-
-                                                    })
-
-                                                }
-
-                                            }
-
-                                        }
-
-                                        NavigationView {
-
-                                            if let selectedTask = selectedTask {
-
-                                                TaskDetailView(viewModel: viewModel, task: selectedTask)
-
-                                                    .navigationBarTitle("Détails de la Tâche")
-
-                                                    .onDisappear {
-
-                                                        self.selectedTask = nil
-
-                                                    }
-
-                                            } else {
-
-                                                Text("Sélectionnez une tâche")
-
-                                                    .navigationBarTitle("Liste des tâches")
-
-                                            }
-
-                                        }
-
-                                    }
-
-                                }
-
-                                func getTaskStateLabel(task: Task) -> String {
-
-                                    return viewModel.stateTask(task: task)
-
-                                }
-
-                            }
-
-                            struct ContentView_Previews: PreviewProvider {
-
-                                static var previews: some View {
-
-                                    ContentView(viewModel: TaskViewModel())
-                                }
-                            }
-                        </textarea>
-                    </div>
-                </div>
+                <img src="/img/code-content-view.jpeg" alt="code-content-view">
 
                 <div style="margin-top: 50px;"></div>
 
-                <div class="card">
-                    <div class="header-card">
-                        <div class="top">
-                        <div class="circle">
-                            <span class="red circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="yellow circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="green circle2"></span>
-                        </div>
-                        <div class="title">
-                            <p id="title2">Task.swift</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="code-container">
-                        <textarea readonly="" name="code" id="code" class="area">
-                            Import Foundation
+                <img src="/img/code-contentview2.jpeg" alt="code-content-view">
 
-                            struct Task : Identifiable {
-                                var id = UUID()
-                                var title: String
-                                var dueDate: Date
-                                var description: String
-                                var isCompleted: Bool
-                                var isSuspended: Bool
-
-                                init(title: String, dueDate: Date, description: String, isCompleted: Bool = false, isSuspended: Bool = false) {
-                                    self.title = title
-                                    self.dueDate = dueDate
-                                    self.description = description
-                                    self.isCompleted = isCompleted
-                                    self.isSuspended = isSuspended
-                                }
-                            }
-                        </textarea>
-                    </div>
-                </div>
+                <div style="margin-top: 50px;"></div>
+>
+                <img src="/img/code-content-view3.jpeg" alt="code-content-view3">
 
                 <div style="margin-top: 50px;"></div>
 
-                <div class="card">
-                    <div class="header-card">
-                        <div class="top">
-                        <div class="circle">
-                            <span class="red circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="yellow circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="green circle2"></span>
-                        </div>
-                        <div class="title">
-                            <p id="title2">TaskViewModel.swift</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="code-container">
-                        <textarea readonly="" name="code" id="code" class="area">
-                            import Foundation
-
-                            class TaskViewModel: ObservableObject {
-
-                                @Published var tasks: [Task] = []
-
-                                func addTask(title: String, dueDate: Date, description: String) {
-
-                                    let newTask = Task(title: title, dueDate: Date(), description: description)
-
-                                    tasks.append(newTask)
-
-                                }
-
-                                func updateTask(task: Task, newTitle: String, newDescription: String, newdueDate: Date) {
-
-                                    if let index = tasks.firstIndex(where: { $0.id == task.id }) {
-
-                                        tasks[index].title = newTitle
-
-                                        tasks[index].description = newDescription
-
-                                        tasks[index].dueDate = newdueDate
-
-                                    }
-                                }
-                                
-                                func deleteTask(task: Task) {
-
-                                    tasks.removeAll { $0.id == task.id }
-
-                                }
-
-                                func stateTask(task: Task ) -> String {
-
-                                    let currentDate = Date()
-
-                                    if task.dueDate < currentDate {
-                                        return "En retard"
-                                    } else if task.isCompleted {
-                                        return "Terminée"
-                                    } else if task.isSuspended {
-                                        return "En suspend"
-                                    } else {
-                                        return "À faire"
-                                    }
-                                }
-                            }
-                        </textarea>
-                    </div>
-                </div>
+                <img src="/img/code-gestiontasksapp.jpeg" alt="code-gestiontasksapp">
 
                 <div style="margin-top: 50px;"></div>
 
-                <div class="card">
-                    <div class="header-card">
-                        <div class="top">
-                        <div class="circle">
-                            <span class="red circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="yellow circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="green circle2"></span>
-                        </div>
-                        <div class="title">
-                            <p id="title2">TaskDetailsView.swift</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="code-container">
-                        <textarea readonly="" name="code" id="code" class="area">
-                            import SwiftUI
-
-                            struct TaskDetailView: View {
-                                @ObservedObject var viewModel: TaskViewModel
-                                var task: Task
-
-                                @State private var isEditing = false
-                                @State private var newTitle = ""
-                                @State private var newDescription = ""
-                                @State private var newdueDate = Date()
-
-                                var body: some View {
-                                    Form {
-                                        Section(header: Text("Détails de la Tâche")) {
-                                            if isEditing {
-                                                TextField("Nouveau Titre", text: $newTitle)
-                                                TextField("Nouvelle Description", text: $newDescription)
-                                                DatePicker("Nouvelle Date d'échéance", selection: $newdueDate, displayedComponents: .date)
-                                            } else {
-                                                Text("Titre: \(task.title)")
-                                                Text("Description: \(task.description)")
-                                                Text("Date d'échéance: \(task.dueDate)")
-                                            }
-                                        }
-
-                                        Section {
-                                            if isEditing {
-                                                Button(action: {
-                                                    viewModel.updateTask(task: task, newTitle: newTitle, newDescription: newDescription, newdueDate: newdueDate)
-                                                    isEditing.toggle()
-                                                }) {
-                                                    Text("Sauvegarder")
-                                                }
-                                            } else {
-                                                Button(action: {
-                                                    isEditing.toggle()
-                                                    newTitle = task.title
-                                                    newDescription = task.description
-                                                    newdueDate = task.dueDate
-                                                }) {
-                                                    Text("Modifier")
-                                                }
-                                            }
-                                            Button(action: {
-                                                viewModel.deleteTask(task: task)
-                                                isEditing.toggle()
-                                            }) {
-                                                Text("Supprimer")
-                                            }
-                                        }
-                                    }
-                                    .navigationBarTitle("Détails de la Tâche")
-                                }
-                                var formattedDueDate: String {
-                                    let formatter = DateFormatter()
-                                    formatter.dateStyle = .short
-                                    formatter.timeStyle = .short
-                                    return formatter.string(from: newdueDate)
-                                }
-                            }
-
-                            struct TaskDetailView_Previews: PreviewProvider {
-                                static var previews: some View {
-                                    let viewModel = TaskViewModel()
-                                    let sampleTask = Task(title: "Exemple de Tâche", dueDate: Date(), description: "Ceci est une tâche de démonstration")
-
-                                    return TaskDetailView(viewModel: viewModel, task: sampleTask)
-                                }
-                            }
-                        </textarea>
-                    </div>
-                </div>
+                <img src="/img/code-task.jpeg" alt="code-task">
 
                 <div style="margin-top: 50px;"></div>
 
-                <div class="card">
-                    <div class="header-card">
-                        <div class="top">
-                        <div class="circle">
-                            <span class="red circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="yellow circle2"></span>
-                        </div>
-                        <div class="circle">
-                            <span class="green circle2"></span>
-                        </div>
-                        <div class="title">
-                            <p id="title2">Gestion_TaskApp.swift</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="code-container">
-                        <textarea readonly="" name="code" id="code" class="area">
-                            import SwiftUI
+                <img src="/img/code-taskviewmodel.jpeg" alt="code-taskviewmodel">
 
-                            @main
-                            struct Gestion_TasksApp: App {
-                                var body: some Scene {
-                                    WindowGroup {
-                                        ContentView(viewModel: TaskViewModel())
-                                    }
-                                }
-                            }
-                        </textarea>
-                    </div>
+                <div style="margin-top: 50px;"></div>
+
+                <img src="/img/code-taskdetailview.jpeg" alt="code-taskdetailview">
+
+                <div style="margin-top: 50px;"></div>
+
+                <img src="/img/code-tasksdetailview2.jpeg" alt="code-tasksdetailview2">
+
+                <div class="sauvegarde-du-projet" style="margin-top: 5rem;">
+                    <h3 style="font-size: 25px;">Sauvegarde du projet</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Chaque nouvelle version de ce projet est "poussée" sur la branche principale (main) du projet sur le dépôt distant <a href="https://github.com" style="font-weight: bold;">Github</a>.
+                    </p>
+                    <img src="" alt="zip-projet-github">
+                    <img src="" alt="placer-projet-github">
+                    <img src="/img/depot-task-manage-app.PNG" alt="depot-projet-github">
                 </div>
             </div>
         </div>

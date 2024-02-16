@@ -37,36 +37,71 @@
 
         .project-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0px 8px 15px rgba(73, 73, 73, 0.3);
+            box-shadow: 0px 8px 15px rgba(114, 114, 114, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        /* .project-description {
-            display: none;
+        .card {
+            position: relative;
+            width: 31em;
+            height: 21em;
+            background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .card img {
+            width: 48px;
+            fill: rgb(80, 79, 79);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .card:hover {
+            transform: rotate(-5deg) scale(1.1);
+            box-shadow: 0 10px 20px rgba(83, 83, 83, 0.2);
+        }
+
+        .card__content {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            width: 100%;
+            height: 100%;
             padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease-in-out;
+            box-sizing: border-box;
+            background-color: #fff;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
         }
 
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 20px;
-            padding-top: 20px;
-            padding-right: 30px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: red;
-        } */
+        .card:hover .card__content {
+            transform: translate(-50%, -50%) rotate(0deg);
+            opacity: 1;
+        }
+
+        .card__title {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .card__description {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        .card:hover img {
+            scale: 0;
+            transform: rotate(-45deg);
+        }
     </style>
 </head>
 <body>
@@ -74,7 +109,7 @@
     <header class="header">
         <nav class="navbar border-b border-black">
             <div class="navbar-logo">
-                <img class="photo_profil" src="/img/pp.jpg" alt="photo-profil">
+                <img class="photo_profil" src="/img/pp_index.png" alt="photo-profil">
                 <a href="index.html">MC.</a>
             </div>
             <div class="navbar-menu">
@@ -113,26 +148,69 @@
             </div>
 
             <div class="grid-container">
-                <a href="projet1.html">
-                    <button class="project-button">
-                        <img src="/img/assoweb.PNG" alt="Assoweb" style="width: 24rem;">
-                    </button>
-                </a>
-                <a href="projet2.html">
-                    <button class="project-button">
-                        <img src="/img/projet-site.jpg" alt="Filtre-carroussel" style="width: 29rem;">
-                    </button>
-                </a>
-                <a href="projet3.html">
-                    <button class="project-button">
-                        <img class="formulaire_contact" src="/img/form_contact.jpg" alt="Frianbiz" style="width: 29rem;">
-                    </button>
-                </a>
-                <a href="projet4.html">
-                    <button class="project-button">
-                        <img src="/img/ipv4.jpg" alt="Cpp" style="width: 30rem;">
-                    </button>
-                </a>
+                <div class="card">
+                    <a href="projet1.html">
+                        <button class="project-button">
+                            <img src="/img/assoweb.PNG" alt="Assoweb" style="width: 24rem;">
+                        </button>
+                        <div class="card__content">
+                            <p class="card__title">
+                                Mail Cleaner 🚫
+                            </p>
+                            <p class="card__description">
+                                <strong>Le projet Mail Cleaner</strong> représente une solution axée sur la gestion d'e-mails indésirables de la boîte de réception du site associatif Assoweb.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="projet2.html">
+                        <button class="project-button">
+                            <img src="/img/projet-site.jpg" alt="Filtre-carroussel" style="width: 24rem;">
+                        </button>
+                        <div class="card__content">
+                            <p class="card__title">
+                                Caroussel de tags pour la Catégorisation d'Articles 🏷️
+                            </p>
+                            <p class="card__description">
+                                Ce projet dédié à la catégorisation d'articles de la section "Blogs" du site vitrine Frianbiz, a été conçu pour offrir aux utilisateurs une expérience de recherche plus intuitive et efficace, en leur permettant de découvrir et de trier facilement les articles en fonction de leurs intérêts.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="projet3.html">
+                        <button class="project-button">
+                            <img src="/img/form_contact.jpg" alt="Frianbiz" style="width: 24rem;">
+                        </button>
+                        <div class="card__content">
+                            <p class="card__title">
+                                Application de Gestion de Tâches 📅
+                            </p>
+                            <p class="card__description">
+                                Task_Manage_App est une application iOS développée en Swift avec l'IDE Xcode. Elle a été conçue en suivant l'architecture <strong>MVVM</strong> (Modèle-Vue-Modèle-Vue). 📝✅
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="projet4.html">
+                        <button class="project-button">
+                            <img src="/img/ipv4.jpg" alt="Cpp" style="width: 24rem;">
+                        </button>
+                        <div class="card__content">
+                            <p class="card__title">
+                                Gestionnaire d'adressage IPV4 🌐
+                            </p>
+                            <p class="card__description">
+                                Le Gestionnaire d'Adresses IPv4 que j'ai développé est une solution pratique pour gérer et comprendre les adresses IP dans le contexte des réseaux informatiques. En simplifiant la manipulation des adresses IPv4, cet outil offre une vision claire des composants essentiels d'une adresse IP et de ses sous-réseaux.
+                            </p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
