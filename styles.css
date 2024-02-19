@@ -530,6 +530,21 @@ tr {
 }
 
 
+.retour-btn {
+  position: absolute;
+  top: 144px;
+  left: 52px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333; /* Couleur du texte */
+}
+
+.retour-btn ion-icon {
+  margin-right: 5px;
+  font-size: 20px; /* Taille de l'icône */
+}
+
 /* VEILLE */
 
 .titre {
@@ -707,7 +722,7 @@ footer {
 /* A PROPOS */
 
 #about {
-  margin: 15rem 0 15rem 0;
+  margin: 10rem 0 10rem 0;
   padding: 60px 0;
   overflow: hidden;
 }
