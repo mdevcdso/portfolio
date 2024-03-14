@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion</title>
+
+    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+    <link href="./script.js" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar border-b border-black">
+            <div class="navbar-logo">
+                <img class="photo_profil" src="/img/pp_index.png" alt="photo-profil">
+                <a href="index.html">MC.</a>
+            </div>
+            <div class="navbar-menu">
+                <ol>
+                    <li>
+                        <a href="presentation.html">
+                            Présentation de la société
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projets.html">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="veille.html">
+                            Veille informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="a-propos.html">
+                            A propos
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    </header>
+
+    <section class="profil">
+        <div class="flex flex-col justify-center items-center">
+            <div class="flex justify-center items-center space-x-8"> 
+                <a href="projets.html" class="retour-btn">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </a>
+                <h1 class="titre">
+                    <span class="font-bold" style="color: rgb(246, 0, 0);">|</span>  Gestion de tickets 📅
+                </h1>
+            </div>
+
+            <div id="project-description-3" class="project-description">
+                <h3 style="font-size: 25px;">Présentation</h3>
+                <div style="display: block;">
+                    <p>Le projet vise à mettre en place un système efficace de gestion de tâches (ticketing) en utilisant le logiciel Notion. L'objectif principal est d'optimiser la collaboration au sein de l'équipe et d'améliorer la traçabilité des tâches.</p>
+                    
+                    <br>
+                    
+                    <h4><strong>Caractéristiques principales :</strong></h4>
+
+                    <br>
+
+                    <ul>
+                        <li>- <span style="font-weight: bold;">Tableau Kanban Intégré :</span> Notion propose un tableau Kanban intuitif qui permet de visualiser l'avancement des tâches de manière claire et concise. Chaque colonne représente une phase du processus (à faire, en cours, terminé), offrant ainsi une vue d'ensemble instantanée.</li>
+                        <li>- <span style="font-weight: bold;">Flexibilité et Personnalisation :</span> Notion permet une personnalisation poussée des tâches, avec la possibilité d'ajouter des champs personnalisés, des étiquettes, des dates d'échéance, et bien plus encore. Cette flexibilité garantit une adaptation parfaite aux besoins spécifiques du projet.</li>
+                        <li>- <span style="font-weight: bold;">Collaboration en Temps Réel :</span> La plateforme permet une collaboration en temps réel, favorisant la communication au sein de l'équipe. Les membres peuvent commenter, attribuer des tâches et partager des fichiers directement dans l'interface Notion.</li>
+                    </ul>
+                    
+                    <br>
+                </div>
+
+                <div style="margin-top: 50px;"></div>
+
+                <div style="display: flex; justify-content: space-around;">
+                    <img src="/img/Ticketing_Notion.PNG" alt="Tickets" style="height: 35rem;">
+                </div>
+
+                <div style="margin-top: 4rem;"></div>
+
+                <h3 style="font-size: 25px;">Les Technologies utilisées</h3>
+                <div>
+                    <img src="img/notion-logo.png" alt="Notion" style="height: 7rem;">
+                </div>
+
+                <div style="margin-top: 2rem;"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex justify-around items-center">
+            <div>
+                <div class="mb-1">
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Réseaux sociaux
+                    </h1>
+                </div>
+                <div>
+                    <ul class="social-icon">
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="https://www.linkedin.com/in/marion-candusso-ba7430230/">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="https://github.com/mdevcdso/">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="#">
+                                <ion-icon name="logo-discord"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex flex-col space-y-2">
+                <div>
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Menu
+                    </h1>
+                </div>
+                <div>
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="presentation.html">Présentation de la société</a></li>
+                        <li class="menu__item"><a class="menu__link" href="projets.html">Projets</a></li>
+                        <li class="menu__item"><a class="menu__link" href="veille.html">Veille informatique</a></li>
+                        <li class="menu__item"><a class="menu__link" href="a-propos.html">A propos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="relative flex flex-wrap justify-center items-center text-white sfthin" style="font-size: larger;">
+                &copy; Marion Candusso | Tout droit réservé
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
