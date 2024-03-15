@@ -145,6 +145,218 @@
 
                 <div style="margin-top: 3rem;"></div>
 
+                <div>
+                    <h3 style="font-size: 25px;">Listing des fonctionnalités du programme</h3>
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier MailManager.php</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>__construct() :</strong> Le constructeur de la classe. Il initialise les variables de connexion à la base de données et configure les paramètres d'erreur pour afficher les erreurs PHP.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>getCollectedEmailsCount() :</strong> Renvoie le nombre d'emails collectés jusqu'à présent.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>getAndPersistEmails($resource_name, $page) :</strong> Cette fonction récupère et persiste les emails provenant de l'API SendGrid en utilisant le nom de la ressource spécifiée et la pagination. Elle stocke également les emails dans une base de données locale après vérification de leur existence.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_new_abonnes_and_members() :</strong> Synchronise les nouveaux abonnés et membres en interrogeant les bases de données locales et distantes pour les membres et abonnés, puis en les insérant dans la base de données locale.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>delete_adress() :</strong> Supprime une adresse spécifique des abonnés.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_new_users() :</strong> Synchronise les nouveaux utilisateurs en insérant des données depuis une base de données externe dans la base de données locale.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_new_sites() :</strong> Synchronise les nouveaux sites en insérant des données depuis une base de données externe dans la base de données locale.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>set_last_sync_date($last_sync_date = null) :</strong> Met à jour la date de dernière synchronisation dans la base de données.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sql_connect() :</strong> Établit une connexion à la base de données MySQL.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>exists($mail) :</strong> Vérifie si un email existe déjà dans la base de données.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>get_mailId($mail) :</strong> Renvoie l'ID d'un email à partir de son adresse.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>get_last_sync_date() :</strong> Renvoie la date de la dernière synchronisation.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>has_last_sync_date() :</strong> Vérifie si une date de dernière synchronisation existe déjà.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_member_site($site) :</strong> Synchronise les membres du site à partir d'une base de données externe.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_abonne_site($site) :</strong> Synchronise les abonnés du site à partir d'une base de données externe.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>createSite($site) :</strong> Crée un nouveau site dans la base de données locale.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>get_siteId($site) :</strong> Renvoie l'ID d'un site à partir de son adresse.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>create_user($mail_id, $site_id, $type, $nom = null, $prenom = null) :</strong> Crée un nouvel utilisateur dans la base de données locale.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_mails_contact($site_adresse) :</strong> Synchronise les emails de contact à partir d'une base de données externe.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>persist_mail_contact($site_adresse, $emails) :</strong> Persiste les emails de contact dans la base de données locale.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>get_mails_contact($site_adresse) :</strong> Récupère les emails de contact à partir d'une base de données externe.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>sync_contact_error($emails, $site_adresse) :</strong> Synchronise les erreurs de contact à partir d'une base de données externe.
+                        </h4>
+
+                        <div style="margin-top: 1rem;"></div>
+
+                        <h4>
+                            <strong>delete_abonne_mail($site_adresse) :</strong> Supprime les abonnés de la base de données.
+                        </h4>
+                    </div>
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier get-mail.php</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>require('MailManager.php'); :</strong> Charge le fichier contenant la classe MailManager.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$last_sync_date = date('Y-m-d H:i:s'); :</strong> Initialise une variable avec la date actuelle pour la dernière synchronisation.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager = new MailManager(); :</strong> Crée une nouvelle instance de la classe MailManager.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->getAndPersistEmails('spam_reports'); :</strong> Appelle la fonction getAndPersistEmails de l'objet MailManager pour récupérer et persister les emails de rapports de spam.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->getAndPersistEmails('blocks'); :</strong> Appelle la fonction getAndPersistEmails de l'objet MailManager pour récupérer et persister les emails bloqués.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->getAndPersistEmails('invalid_emails'); :</strong> Appelle la fonction getAndPersistEmails de l'objet MailManager pour récupérer et persister les emails invalides.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->getAndPersistEmails('bounces'); :</strong> Appelle la fonction getAndPersistEmails de l'objet MailManager pour récupérer et persister les emails rebondis.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->sync_new_sites(); :</strong> Appelle la fonction sync_new_sites de l'objet MailManager pour synchroniser de nouveaux sites.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->sync_new_users(); :</strong> Appelle la fonction sync_new_users de l'objet MailManager pour synchroniser de nouveaux utilisateurs.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->sync_new_abonnes_and_members(); :</strong> Appelle la fonction sync_new_abonnes_and_members de l'objet MailManager pour synchroniser de nouveaux abonnés et membres.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>$mail_manager->set_last_sync_date($last_sync_date); :</strong> Met à jour la date de dernière synchronisation en utilisant la valeur stockée dans $last_sync_date.
+                        </h4>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;"></div>
 
                 <div>
                     <h3 style="font-size: 25px;">Code</h3>
@@ -221,11 +433,6 @@
                         <li class="social-icon__item">
                             <a class="social-icon__link" href="https://github.com/mdevcdso/">
                                 <ion-icon name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-icon__item">
-                            <a class="social-icon__link" href="#">
-                                <ion-icon name="logo-discord"></ion-icon>
                             </a>
                         </li>
                     </ul>

@@ -111,6 +111,255 @@
 
                 <div style="margin-top: 2rem;"></div>
 
+                <div>
+                    <h3 style="font-size: 25px;">Listing des fonctionnalités du programme</h3>
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier BlogController.php</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>namespace App\Http\Controllers\Front; :</strong> Définit l'espace de noms pour le contrôleur de blog dans le front-end de l'application.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>use App\Http\Controllers\Controller; :</strong> Importe la classe de base des contrôleurs Laravel pour ce contrôleur.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>use App\Models\BlogPost; :</strong> Importe le modèle de publication de blog pour le contrôleur.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>use App\Models\Tag; :</strong> Importe le modèle de tag pour le contrôleur.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>class BlogController extends Controller :</strong> Définit la classe du contrôleur de blog, héritant de la classe de base des contrôleurs Laravel.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>public function index() :</strong> Méthode de contrôleur qui affiche la liste des publications de blog.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>public function show(BlogPost $blog) :</strong> Méthode de contrôleur qui affiche les détails d'une publication de blog spécifique.
+                        </h4>
+                    </div>
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier index.blade.php</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>@extends('front.layouts.app') :</strong> Étend le layout par défaut de l'application front-end.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@section('title', __('front.layout.title', ['title' => __('front.blogs.title')])) :</strong> Définit le titre de la page en utilisant la traduction pour le titre du blog.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@section('content') :</strong> Début de la section de contenu de la page.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@foreach($tags as $tag) :</strong> Boucle à travers chaque tag pour afficher les options de filtre.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@foreach ($blogs as $key => $blog) :</strong> Boucle à travers chaque blog pour afficher les publications.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@section('scripts') :</strong> Début de la section pour inclure des scripts JavaScript.
+                        </h4>
+                    </div>
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier Tag.php</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>namespace App\Models; :</strong> Déclare l'espace de noms pour le modèle Tag dans l'application.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>use Illuminate\Database\Eloquent\Factories\HasFactory; :</strong> Importe le trait HasFactory pour le modèle Tag, permettant l'utilisation des factories.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>use Illuminate\Database\Eloquent\Model; :</strong> Importe la classe Model pour le modèle Tag, fournissant des fonctionnalités de base pour les modèles Eloquent.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>class Tag extends Model :</strong> Définit la classe Tag qui étend la classe de base Model d'Eloquent.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>use HasFactory; :</strong> Utilise le trait HasFactory dans la classe Tag pour activer les factories.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>protected $fillable = ['name']; :</strong> Définit les attributs remplissables du modèle Tag, permettant le remplissage massif du champ 'name'.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>public function blogs() :</strong> Définit la relation entre les tags et les blog posts, indiquant qu'un tag peut être associé à plusieurs blog posts.
+                        </h4>
+                    </div>                    
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier custom-components.scss</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>.tag-btn :</strong> Définit les styles pour les boutons de tag.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>label input :</strong> Sélectionne les balises input à l'intérieur des balises label dans les boutons de tag et applique des styles.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>position: absolute;</strong> Positionne l'élément de manière absolue par rapport à son premier ancêtre positionné.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>display: none;</strong> Masque l'élément, le rendant invisible.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>color: #fff !important;</strong> Définit la couleur du texte en blanc pour les boutons de tag, avec une priorité élevée.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>input + span :</strong> Sélectionne les balises span qui suivent immédiatement les balises input dans les boutons de tag et applique des styles.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>transition: transform 0.3s;</strong> Applique une transition de transformation avec une durée de 0.3 seconde pour les boutons de tag.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>position: relative;</strong> Positionne l'élément de manière relative par rapport à sa position normale.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>z-index: 1;</strong> Définit l'empilement de l'élément par rapport à ses éléments frères.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>.selected :</strong> Définit les styles pour les éléments sélectionnés.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>background-color: #e2e8f0;</strong> Définit la couleur de fond pour les éléments sélectionnés.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>transform: translateX(-50%);</strong> Applique une transformation pour déplacer l'élément de 50% vers la gauche lorsqu'il est sélectionné.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>z-index: 2;</strong> Définit une valeur d'empilement supérieure pour les éléments sélectionnés par rapport à ceux qui ne le sont pas.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>.selected .tag-cross :</strong> Sélectionne les éléments avec la classe "tag-cross" à l'intérieur des éléments avec la classe "selected" et applique des styles.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>display: inline-block;</strong> Affiche l'élément comme un bloc, mais permet de définir sa largeur et sa hauteur.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>margin-left: 4px;</strong> Définit la marge à gauche de l'élément.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>color: #718096;</strong> Définit la couleur du texte pour l'icône de croix.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>cursor: pointer;</strong> Définit le curseur de la souris comme une main, indiquant que l'élément est cliquable.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>.tag-cross:hover :</strong> Sélectionne les éléments avec la classe "tag-cross" au survol de la souris et applique des styles.
+                        </h4>
+                    </div>                    
+                </div>
+
+                <div style="margin-top: 2rem;"></div>
+
                 <h3 style="font-size: 25px;">Code</h3>
                 <img src="/img/code-blog-controler.jpeg" alt="blog-controller" style="height: 45rem; width: 55rem;">
 
@@ -165,11 +414,6 @@
                         <li class="social-icon__item">
                             <a class="social-icon__link" href="https://github.com/mdevcdso/">
                                 <ion-icon name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-icon__item">
-                            <a class="social-icon__link" href="#">
-                                <ion-icon name="logo-discord"></ion-icon>
                             </a>
                         </li>
                     </ul>

@@ -101,6 +101,290 @@
 
                 <div style="margin-top: 2rem;"></div>
 
+                <div>
+                    <h3 style="font-size: 25px;">Listing des fonctionnalités du programme</h3>
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier ContentView.swift</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>ContentView :</strong> Définit la vue principale de l'application.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var viewModel: TaskViewModel :</strong> Déclare une propriété observée pour le modèle de vue TaskViewModel.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var isAddingTask = false :</strong> Déclare une variable d'état pour suivre l'état d'ajout d'une tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var selectedTask: Task? = nil :</strong> Déclare une variable d'état pour suivre la tâche sélectionnée.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var isShowingAddTaskView = false :</strong> Déclare une variable d'état pour suivre l'état d'affichage de la vue d'ajout de tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var newTaskTitle = "" :</strong> Déclare une variable d'état pour stocker le titre de la nouvelle tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var newTaskDescription = "" :</strong> Déclare une variable d'état pour stocker la description de la nouvelle tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var newTaskDueDate = Date() :</strong> Déclare une variable d'état pour stocker la date d'échéance de la nouvelle tâche, initialisée à la date actuelle.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>private let dateFormatter: DateFormatter :</strong> Déclare un formateur de date pour afficher les dates.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>func getTaskStateColor(task: Task) -> Color :</strong> Définit une fonction pour obtenir la couleur d'état de la tâche en fonction de son état.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var body: some View :</strong> Définit le corps de la vue ContentView.
+                        </h4>
+                    
+                        <!-- Autres éléments de la vue ContentView omis pour des raisons de concision -->
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>func getTaskStateLabel(task: Task) -> String :</strong> Définit une fonction pour obtenir l'étiquette d'état de la tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>struct ContentView_Previews: PreviewProvider :</strong> Définit la structure pour afficher un aperçu de ContentView.
+                        </h4>
+                    </div>
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier Gestion_TasksApp.swift</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>import SwiftUI :</strong> Importe le framework SwiftUI.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@main struct Gestion_TasksApp: App :</strong> Définit la structure Gestion_TasksApp comme point d'entrée de l'application, conforme au protocole App.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var body: some Scene :</strong> Déclare la variable body qui représente une scène.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>WindowGroup :</strong> Définit un groupe de fenêtres.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>ContentView(viewModel: TaskViewModel()) :</strong> Affiche la vue ContentView avec un ViewModel TaskViewModel.
+                        </h4>
+                    </div>                    
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier Task.swift</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>import Foundation :</strong> Importe le framework Foundation.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>struct Task : Identifiable :</strong> Définit une structure Task qui se conforme au protocole Identifiable.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var id = UUID() :</strong> Déclare une variable id qui est initialisée avec un UUID, utilisée pour identifier de manière unique chaque instance de Task.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var title: String :</strong> Déclare une variable title de type String, qui représente le titre de la tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var dueDate: Date :</strong> Déclare une variable dueDate de type Date, qui représente la date d'échéance de la tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var description: String :</strong> Déclare une variable description de type String, qui représente la description de la tâche.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var isCompleted: Bool :</strong> Déclare une variable isCompleted de type Bool, qui indique si la tâche est terminée ou non (par défaut à false).
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var isSuspended: Bool :</strong> Déclare une variable isSuspended de type Bool, qui indique si la tâche est suspendue ou non (par défaut à false).
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>init(title: String, dueDate: Date, description: String, isCompleted: Bool = false, isSuspended: Bool = false) :</strong> Initialise une instance de Task avec les valeurs spécifiées pour le titre, la date d'échéance, la description, isCompleted et isSuspended.
+                        </h4>
+                    </div>                                        
+
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier TaskViewModel.swift</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>import Foundation :</strong> Importe le framework Foundation.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>class TaskViewModel: ObservableObject :</strong> Définit une classe TaskViewModel qui se conforme au protocole ObservableObject.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@Published var tasks: [Task] = [] :</strong> Déclare une propriété tasks, publiée, de type tableau de Task, initialisée à un tableau vide.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>func addTask(title: String, dueDate: Date, description: String) :</strong> Ajoute une nouvelle tâche à la liste de tâches avec le titre, la date d'échéance et la description spécifiés.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>func updateTask(task: Task, newTitle: String, newDescription: String, newdueDate: Date) :</strong> Met à jour les détails de la tâche spécifiée avec les nouveaux titre, description et date d'échéance.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>func deleteTask(task: Task) :</strong> Supprime la tâche spécifiée de la liste des tâches.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>func stateTask(task: Task) -> String :</strong> Retourne l'état actuel de la tâche spécifiée, qui peut être "En retard", "Terminée", "En suspend" ou "À faire".
+                        </h4>
+                    </div>                      
+                    
+                    <div style="margin-top: 4rem;"></div>
+
+                    <h4 style="font-size: 18px; margin-bottom: 1rem;">- <strong style="text-decoration:underline;">Fichier TaskDetailView.swift</strong></h4>
+                    <div>
+                        <h4>
+                            <strong>import SwiftUI :</strong> Importe le framework SwiftUI.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>struct TaskDetailView: View :</strong> Définit une vue TaskDetailView.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@ObservedObject var viewModel: TaskViewModel :</strong> Déclare une propriété viewModel, observée, de type TaskViewModel.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var task: Task :</strong> Déclare une propriété task de type Task.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var isEditing = false :</strong> Déclare une propriété isEditing, privée, qui indique si la vue est en mode édition ou non.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var newTitle = "" :</strong> Déclare une propriété newTitle, privée, pour stocker le nouveau titre de la tâche en cours d'édition.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var newDescription = "" :</strong> Déclare une propriété newDescription, privée, pour stocker la nouvelle description de la tâche en cours d'édition.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>@State private var newdueDate = Date() :</strong> Déclare une propriété newdueDate, privée, pour stocker la nouvelle date d'échéance de la tâche en cours d'édition.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var body: some View :</strong> Définit le corps de la vue.
+                        </h4>
+                    
+                        <div style="margin-top: 1rem;"></div>
+                    
+                        <h4>
+                            <strong>var formattedDueDate: String :</strong> Déclare une propriété computed pour formater la date d'échéance.
+                        </h4>
+                    </div>                    
+                </div>
+
+                <div style="margin-top: 2rem;"></div>
+
                 <h3 style="font-size: 25px;">Code</h3>
                 <img src="/img/code-content-view.jpeg" alt="code-content-view">
 
@@ -163,11 +447,6 @@
                         <li class="social-icon__item">
                             <a class="social-icon__link" href="https://github.com/mdevcdso/">
                                 <ion-icon name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="social-icon__item">
-                            <a class="social-icon__link" href="#">
-                                <ion-icon name="logo-discord"></ion-icon>
                             </a>
                         </li>
                     </ul>
