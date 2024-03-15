@@ -245,7 +245,7 @@ section p {
 
 .border {
   width: 3px;
-  height: 25rem;
+  height: 15rem;
   background-color: rgb(208, 208, 208);
   margin: 0em 2em 0em 2em;
 }
@@ -269,11 +269,7 @@ section h3 {
 }
 
 table {
-  width: 100%;
-}
-
-tbody {
-  line-height: 35px;
+  width: 80rem;
 }
 
 tr {
@@ -291,6 +287,8 @@ tr {
 
 .client-td {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .client-td a {
@@ -657,7 +655,6 @@ tr {
 
 .client-a:hover {
   transform: translateY(-5px);
-  box-shadow: 0 7px 18px 0 rgba(0, 0, 0, 0.2);
 }
 
 /*FOOTER*/
