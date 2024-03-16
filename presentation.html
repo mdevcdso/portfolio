@@ -204,7 +204,7 @@
         </table>
     </section>
 
-    <section id="client" class="section-container" style="margin-bottom: 4rem;">
+    <section id="client" class="section-container" style="margin-bottom: 1rem;">
         <h3>
             Clients
         </h3>
@@ -230,6 +230,30 @@
                 </tbody>
             </table>
          </div>
+    </section>
+
+    <section id="carte-interactive" class="section-container">
+        <div style="margin-bottom: 7rem;">
+            <h3>Localisation</h3>
+            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                <script>
+                    (function () {
+                        var setting = {"query":"3 Avenue du Québec, Villebon-sur-Yvette, France","width":1317,"height":748,"satellite":false,"zoom":13,"placeId":"ChIJFbZcUSXW5UcR9FQntKZHOo8","cid":"0x8f3a47a6b42754f4","coords":[48.6883808,2.2074819],"lang":"fr","queryString":"3 Avenue du Québec, Villebon-sur-Yvette, France","centerCoord":[48.6883808,2.2074819],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"1083385"};
+                        var d = document;
+                        var s = d.createElement('script');
+                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=1083385';
+                        s.async = true;
+                        s.onload = function (e) {
+                        window.OneMap.initMap(setting)
+                        };
+                        var to = d.getElementsByTagName('script')[0];
+                        to.parentNode.insertBefore(s, to);
+                    })();
+                </script>
+                <a href="https://1map.com/fr/map-embed">1 Map</a>
+            </div>
+        </div>
     </section>
 
     <footer>
