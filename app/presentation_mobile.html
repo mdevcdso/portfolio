@@ -5,62 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Présentation entreprise</title>
-    <link href="./dist/output.css" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet">
-    <link href="./app/mobile.css" rel="stylesheet">
-    <script src="mobile.js"></script>
+    <link href="mobile.css" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
-<body class="presentation-body">
+<body>
+    <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <ul id="menu">
+            <a href="./presentation_mobile.html"><li>Présentation de la société</li></a>
+            <a href="./projets_mobile.html"><li>Projets</li></a>
+            <a href="./veille_mobile.html"><li>Veille</li></a>
+            <a href="./a-propos_mobile.html"><li>A propos</li></a>
+          </ul>
+        </div>
+    </nav>
 
-    <header class="header">
-        <nav class="navbar border-b border-black">
-            <div class="navbar-logo">
-                <img class="photo_profil" src="/img/pp_index.png" alt="photo-profil">
-                <a href="index.html">MC.</a>
-            </div>
-            <div class="navbar-menu">
-                <ol>
-                    <li>
-                        <a href="presentation.html">
-                            Présentation de la société
-                        </a>
-                    </li>
-                    <li>
-                        <a href="projets.html">
-                            Projets
-                        </a>
-                    </li>
-                    <li>
-                        <a href="veille.html">
-                            Veille informatique
-                        </a>
-                    </li>
-                    <li>
-                        <a href="a-propos.html">
-                            A propos
-                        </a>
-                    </li>
-                </ol>
-            </div>
-        </nav>
-    </header>
-
-    <section class="profil mb-10">
-        <div class="flex justify-center items-center mb-10">
+    <section class="profil">
+        <div class="div_titre">
             <h1 class="titre">
                 <span class="font-bold" style="color: hsl(261deg 80% 48%);">|</span> Présentation de la société
             </h1>
         </div>
-        <div class="flex flex-row items-center">
-            <p style="width: 56rem;">
+        <div class="paragraphe">
+            <img class="society_image" src="/img/fbz-logo.svg" alt="Frianbiz">
+            <p>
                 <a href="https://www.frianbiz.com"><span class="gradient text-transparent bg-clip-text text-2xl font-extrabold">Frianbiz</span></a> est une SAS implantée à Villebon-sur-Yvette (91140) dans le département de l'Essonne.
                 Elle est spécialisée dans le secteur de la programmation informatique et intervient, depuis sa création en 2008, sur tous types de projets web tels que les sites vitrines, les sites de contenu,
                  les sites e-commerce et les applications natives et hybrides en utilisant des références technologiques web comme AngularJS, Node.js, HTML5, Kohana, Laravel, etc...
                 Depuis 2016, la société fait partie du groupe Maltem dont l'expertise est tournée vers le Buisiness Consulting, la Data Factory, Agile Technology, Cyber Security et Design Experience.
-    
             </p>
-            <div class="border"></div>
-            <img class="h-20 society_image" src="/img/fbz-logo.svg" alt="Frianbiz">
         </div>
     </section>
 
@@ -131,13 +110,6 @@
                     <td class="desc">
                         8
                     </td>
-                    <!-- <td>
-                        <a href="https://www.frianbiz.com/a-propos">
-                            <button class="bouton">
-                                Organigramme
-                            </button>
-                        </a>
-                    </td> -->
                 </tr>
                 <tr>
                     <td class="arrow">
@@ -174,13 +146,13 @@
                     </td>
                     <td>
                         <a href="http://www.maltem.com/" class="flex justify-center items-center">
-                            <img src="/img/logo-maltem.png" alt="Maltem" class="pt-4 h-8 society_image">
+                            <img src="/img/logo-maltem.png" alt="Maltem" class="pt-4 h-8 maltem_image">
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td class="arrow">
-                        Depuis le
+                        Depuis
                     </td>
                     <td class="desc">
                         01-11-2018
@@ -234,35 +206,11 @@
          </div>
     </section>
 
-    <section id="carte-interactive" class="section-container">
-        <div style="margin-bottom: 7rem;">
-            <h3>Localisation</h3>
-            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
-                <script>
-                    (function () {
-                        var setting = {"query":"3 Avenue du Québec, Villebon-sur-Yvette, France","width":1317,"height":748,"satellite":false,"zoom":13,"placeId":"ChIJFbZcUSXW5UcR9FQntKZHOo8","cid":"0x8f3a47a6b42754f4","coords":[48.6883808,2.2074819],"lang":"fr","queryString":"3 Avenue du Québec, Villebon-sur-Yvette, France","centerCoord":[48.6883808,2.2074819],"id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"1083385"};
-                        var d = document;
-                        var s = d.createElement('script');
-                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=1083385';
-                        s.async = true;
-                        s.onload = function (e) {
-                        window.OneMap.initMap(setting)
-                        };
-                        var to = d.getElementsByTagName('script')[0];
-                        to.parentNode.insertBefore(s, to);
-                    })();
-                </script>
-                <a href="https://1map.com/fr/map-embed">1 Map</a>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <div class="flex justify-around items-center">
-            <div>
-                <div class="mb-1">
-                    <h1 class="text-center text-white text-lg font-bold">
+        <div class="footer_container">
+            <div class="social_container_footer">
+                <div>
+                    <h1>
                         Réseaux sociaux
                     </h1>
                 </div>
@@ -284,26 +232,26 @@
 
             <div class="divider"></div>
 
-            <div class="flex flex-col space-y-2">
+            <div class="social_container_footer">
                 <div>
-                    <h1 class="text-center text-white text-lg font-bold">
+                    <h1>
                         Menu
                     </h1>
                 </div>
                 <div>
                     <ul class="menu">
                         <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
-                        <li class="menu__item"><a class="menu__link" href="presentation.html">Présentation de la société</a></li>
-                        <li class="menu__item"><a class="menu__link" href="projets.html">Projets</a></li>
-                        <li class="menu__item"><a class="menu__link" href="veille.html">Veille informatique</a></li>
-                        <li class="menu__item"><a class="menu__link" href="a-propos.html">A propos</a></li>
+                        <li class="menu__item"><a class="menu__link" href="presentation_mobile.html">Présentation de la société</a></li>
+                        <li class="menu__item"><a class="menu__link" href="projets_mobile.html">Projets</a></li>
+                        <li class="menu__item"><a class="menu__link" href="veille_mobile.html">Veille informatique</a></li>
+                        <li class="menu__item"><a class="menu__link" href="a-propos_mobile.html">A propos</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="divider"></div>
 
-            <div class="relative flex flex-wrap justify-center items-center text-white sfthin" style="font-size: larger;">
+            <div class="copyright" style="font-size: larger;">
                 &copy; Marion Candusso | Tout droit réservé
             </div>
         </div>

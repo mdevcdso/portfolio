@@ -258,6 +258,15 @@ section p {
 
 /* PRESENTATION SOCIETE */
 
+.presentation-body {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 100vh; 
+  margin: 0;
+}
+
 .section-container {
   padding: 20px;
   max-width: 100%;
@@ -985,43 +994,4 @@ left: 0%;
   position: relative;
   width: 100%;
   height: auto;
-}
-
-
-/* PARTIE MOBILE */
-
-/* ACCUEIL */
-
-@media screen and (max-width: 768px) {
-  .presentation {
-    padding: 10px; /* Réduire le rembourrage pour les petits écrans */
-  }
-
-  .mobile-main {
-    padding: 40px 20px !important;
-  }
-
-  .big-heading {
-    font-size: 20px; /* Réduire la taille de la police */
-    letter-spacing: 5px; /* Réduire l'espacement des lettres */
-  }
-
-  .mobile-text {
-    margin: 2rem 0 2rem 0 !important;
-    text-align: start !important;
-  }
-
-  .parcourir-site {
-    font-size: 16px; /* Réduire la taille de la police */
-  }
-  
-  .options_menu {
-    flex-direction: column; /* Afficher les boutons verticalement */
-  }
-  
-  .btn {
-    margin: 0 0 1rem 0;
-    padding: 8px 20px; /* Réduire le rembourrage des boutons */
-    font-size: 14px; /* Réduire la taille de la police */
-  }
 }

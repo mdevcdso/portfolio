@@ -1,0 +1,574 @@
+/* PARTIE MOBILE */
+
+body {
+  margin: 0;
+}
+
+/* BURGER MENU */
+  
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 23px;
+  left: 9px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: -webkit-fill-available;
+  height: 92.9vh;
+  margin: -100px 0 0 -50px;
+  padding-top: 90px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu a {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px rgb(172, 172, 172);
+}
+
+#menu li
+{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+/* ACCUEIL */
+  .presentation {
+    padding: 10px; /* Réduire le rembourrage pour les petits écrans */
+  }
+
+  .mobile-main {
+    padding: 40px 20px !important;
+  }
+
+  .big-heading {
+    font-size: 20px; /* Réduire la taille de la police */
+    letter-spacing: 5px; /* Réduire l'espacement des lettres */
+  }
+
+  .mobile-text {
+    margin: 2rem 0 2rem 0 !important;
+    text-align: start !important;
+  }
+
+  .parcourir-site {
+    font-size: 16px; /* Réduire la taille de la police */
+  }
+  
+  .options_menu {
+    flex-direction: column; /* Afficher les boutons verticalement */
+  }
+  
+  .btn {
+    margin: 0 0 1rem 0;
+    padding: 8px 20px; /* Réduire le rembourrage des boutons */
+    font-size: 14px; /* Réduire la taille de la police */
+  }
+  
+  
+  /* PRESENTATION SOCIETE */
+
+  @font-face {
+    font-family: 'sfthin';
+    src: url(/fonts/SF-Pro-Display-Thin.otf);
+  }
+
+  @font-face {
+    font-family: 'sfblack';
+    src: url(/fonts/SF-Pro-Display-Black.otf);
+  }
+
+  @font-face {
+    font-family: 'queenSideLight';
+    src: url(/fonts/QueensidesLight.ttf);
+  }
+
+  .profil {
+    margin: 10px;
+  }
+
+  .div_titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titre {
+    color: rgb(90, 90, 90);
+    font-size: 1.1rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    font-weight: bold;
+    font-family: 'queenSideLight';
+  }
+  
+  .profil p {
+    font-family: "sfthin";
+    font-size: medium;
+    line-height: 2em;
+  }
+
+  .paragraphe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .paragraphe span {
+    font-size: larger;
+    background-image: linear-gradient(to right, rgb(181, 39, 174), rgb(116, 70, 180)); /* Remplacez les couleurs par celles que vous souhaitez */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+
+  .society_image {
+    height: 2rem;
+  }
+
+  .section-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  section h3 {
+    color: #514f4f;
+    font-weight: bold;
+    padding-bottom: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5rem;
+    border: solid #bab8b8;
+  }
+  
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-top: 1px solid #514f4f;
+    margin: 10px 0 10px 0;
+  }
+  
+  .other-title {
+    font-weight: bold;
+    background-color: #dadada;
+    width: 100%;
+  }
+
+  .client-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .client-td_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 3rem;
+  }
+  
+  .client-td a {
+    padding: 20px 20px 20px 26px;
+    margin-top: 5px;
+  }
+
+  .maltem_image {
+    height: 1.4rem;
+  }
+
+
+  /* FOOTER */
+
+  .footer_container {
+    background-color: rgb(122, 64, 175);
+    padding-bottom: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .social_container_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .social_container_footer h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    font-family: "sfthin";
+  }
+
+  .social-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2rem;
+  }
+
+  .menu_mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 2;
+    font-size: large;
+    margin-right: 2rem;
+  }
+
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+
+  .menu__link {
+    font-family: "sfthin";
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 6px 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+
+  .copyright {
+    position: relative;
+    color: white;
+    font-family: "sfthin";
+  }
+
+  /*PROJETS*/
+
+  .card {
+    width: auto;
+    color: #555555;
+    margin: 0 auto;
+  }
+
+  .card__title {
+    font-weight: bold;
+  }
+
+  /* VEILLE */
+
+  .veille {
+    position: relative;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .veille h1 {
+    color: rgb(235, 108, 10);
+  }
+  
+  .veille p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .veille li {
+    list-style: none;
+  }
+
+  /* A PROPOS */
+
+.section_title h2 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #070707;
+  padding-bottom: 20px;
+  position: relative;
+  line-height: 1.2;
+  margin-top: 0;
+  font-family: 'sfblack';
+}
+
+.section_title p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-g h3 {
+  font-family: 'sfblack';
+  letter-spacing: 4px;
+  color: #070707;
+}
+
+#formation, #CV {
+  margin: 1rem;
+}
+
+#formation p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.date_text {
+  font-family: "sfthin" !important;
+}
+
+.social-icons a {
+  display: inline-block;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: #495057;
+  color: #fff!important;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  margin-right: 1rem;
+}
+
+.fab {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-linkedin-in:before {
+  content: "\f0e1";
+}
+
+.row button {
+  margin-top: 30px;
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+}
+
+.row button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #a2d9ea;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+
+.row button span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+
+.row button svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.row button:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.row button:hover svg {
+  transform: translateX(0);
+}
+
+.row button:active {
+  transform: scale(0.95);
+}
+
+.autre_ul {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.autre_ul li {
+  list-style: none;
+}
