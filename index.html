@@ -4,102 +4,283 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>A propos</title>
     <link href="./dist/output.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-
 <body>
-    <div class="presentation">
-        <main class="block mobile-main" style="background-color: rgb(43, 40, 48); padding: 40px">
-            <section class="flex flex-col justify-center items-center">
-                
-                <div style="transition-delay: 100ms;">
-                    <h1>
-                        Bonjour, je suis <span class="prenom-nom">Marion Candusso</span>.
+    <header class="header">
+        <nav class="navbar border-b border-black">
+            <div class="navbar-logo">
+                <img class="photo_profil" src="/img/pp_index.png" alt="photo-profil">
+                <a href="index.html">MC.</a>
+            </div>
+            <div class="navbar-menu">
+                <ol>
+                    <li>
+                        <a href="presentation.html">
+                            Présentation de la société
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projets.html">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="veille.html">
+                            Veille informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="a-propos.html">
+                            A propos
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="contenu-profil" style="display: flex; justify-content:space-around; align-items: center; margin: 0 4rem 5rem 4rem;">
+            <div class="section_title">
+                <h2 style="font-size: 6rem; line-height: 5.5rem; z-index: 5;">
+                    Marion Candusso
+                </h2>
+                <div style="margin-bottom: 1rem;">
+                    <p style="font-weight: uppercase;">Massy, 91300, <a href="mailto:contact@marion-candusso.fr" style="font-weight: bold;">contact@marion-candusso.fr</a></p>
+                </div>
+                <p style="width: 50rem;">
+                    Cela fait 2 ans que je me consacre à l'apprentissage du développement web. J'ai par ailleurs effectué plusieurs petits projets mobiles et web en autodidacte avec l’ aide des IDEs Visual Studio Code et XCode.
+                </p>
+            </div>
+            <img src="/img/pp_index.png" alt="pp-index" style="width: 21rem;">
+        </div>
+    </section>
+
+    <section id="formation">
+        <div class="container">
+            <div class="section_title">
+                <h2 style="font-size: 3.3rem;">
+                    Parcours
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-g">
+
+                    <h3 style="font-size: 2rem; margin-bottom: 0rem;">
+                        Expérience professionnelle
+                    </h3>
+                    <div style="margin-bottom: 3rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                Développeuse Web<br /><br />
+                                <p class="content_box" style="font-size: 1rem; margin-top: -14px">
+                                    Frianbiz - 91140 Villejust<br>
+                                </p>
+                            </div>
+                            <div>
+                                <h2 style="color: black;">décembre 2022 - Aujourd'hui</h2>
+                            </div>
+                        </div>
+                    
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                Assistante Support Informatique<br /><br />
+                                <p class="content_box" style="font-size: 1rem; margin-top: -14px">
+                                    <b>Sifa Logistics - 91140 Villebon-Sur-Yvette<br /></b>
+                                </p>
+                            </div>
+                            <div>
+                                <h2 style="color: black;">septembre 2022 - décembre 2022</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 2rem; margin-bottom: 0rem;">
+                        Formations
+                    </h3>
+                    <div style="margin-bottom: 3rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                BTS SIO option SISR<br /><br />
+                                <p class="content_box" style="font-size: 1rem; margin-top: -14px">
+                                    <b>Faculté des métiers de l'Essonne - 91300 Massy<br></b>
+                                </p>
+                            </div>
+                            <div>
+                                <h2 style="color: black;">septembre 2022 - Aujourd'hui</h2>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between;">
+                            <div>
+                                Licence Sciences de la Terre<br /><br />
+                                <p class="content_box" style="font-size: 1rem; margin-top: -14px">
+                                    <b>Université Paris Saclay - 91400 Orsay<br /></b>
+                                </p>
+                            </div>
+                            <div>
+                                <h2 style="color: black;">2019 - 2022</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 2rem; margin-bottom: 0rem;">
+                        Compétences
+                    </h3>
+                    <div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0rem;">Langages de programmation</h3>
+                        <div class="col-g" style="display: flex; justify-content: space-around; height: 60px; width: auto; margin-top: 10px;">
+                            <!-- HTML -->
+                            <img src="img/html.png" alt="HTML">
+                            <!-- CSS -->
+                            <img src="img/css.png" alt="CSS">
+                            <!-- JavaScript -->
+                            <img src="img/js.png" alt="JavaScript">
+                            <!-- Laravel -->
+                            <img src="img/laravel.png" alt="Laravel">
+                            <!-- TailwindCSS -->
+                            <img src="img/tailwincss.png" alt="TailwindCSS">
+                            <!-- Python -->
+                            <img src="img/python.png" alt="Python">
+                            <!-- C++ -->
+                            <img src="img/c++.png" alt="C++">
+                            <!-- Java -->
+                            <img src="img/java.png" alt="Java">
+                            <!-- PHP -->
+                            <img src="img/php.png" alt="PHP">
+                            <!-- MySQL -->
+                            <img src="img/sql.png" alt="MySQL">
+                            <!-- Figma -->
+                            <img src="img/figma.png" alt="Figma">
+                        </div>
+
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0rem; margin-top: 5rem;">Autres</h3>
+                        <div>
+                            <ul>
+                                <li>
+                                    - Maîtrise de Github, GitLab et Github Desktop
+                                </li>
+                                <li>
+                                    - Conception de sites web responsives
+                                </li>
+                                <li>
+                                    - Bases du logiciel Docker
+                                </li>
+                                <li>
+                                    - Bases dans la conception d’applications mobile (Swift)
+                                </li>
+                                <li>
+                                    - Gestion de bases de données MySQL
+                                </li>
+                            </ul>
+                        </div>
+                    </div>       
+                </div>
+            </div>         
+        </div>
+    </section>
+
+    <section id="CV">
+        <div class="container">
+            <div class="section-title">
+                <h3 style="font-size: 2rem; margin-bottom: 0rem;">
+                    Curriculum Vitae 📑
+                </h3>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <a href="/pdf/CV_Marion_Candusso.pdf" download="CV">
+                    <button>
+                        <span>Télécharger le CV</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="CV">
+        <div class="container">
+            <div class="section-title">
+                <h3 style="font-size: 2rem; margin-bottom: 0rem; display: flex; align-items: center;">
+                    Tableau de synthèse du portfolio
+                    <svg viewBox="0 0 24 24" height="24px" width="24px" style="vertical-align: middle; margin-left: 15px;">
+                        <rect x="1" y="3" width="22" height="18" fill="none" stroke="black" stroke-width="2"/>
+                        <line x1="1" y1="9" x2="23" y2="9" stroke="black" stroke-width="2"/>
+                        <line x1="1" y1="15" x2="23" y2="15" stroke="black" stroke-width="2"/>
+                        <line x1="8" y1="3" x2="8" y2="21" stroke="black" stroke-width="2"/>
+                        <line x1="16" y1="3" x2="16" y2="21" stroke="black" stroke-width="2"/>
+                    </svg>
+                </h3>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <a href="/pdf/Tableau_de_synthese_portfolio_Marion_Candusso.pdf" download="Tableau_synthèse">
+                    <button>
+                        <span>Télécharger le tableau de synthèse</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="flex justify-around items-center">
+            <div>
+                <div class="mb-1">
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Réseaux sociaux
                     </h1>
                 </div>
-                <div class="text-center mb-16 mobile-text" style="transition-delay: 200ms;">
-                    <h2 class="big-heading">
-                        Apprentie <span class="dev">développeuse web</span>.
-                    </h2>
+                <div>
+                    <ul class="social-icon">
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="https://www.linkedin.com/in/marion-candusso-ba7430230/">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="social-icon__item">
+                            <a class="social-icon__link" href="https://github.com/mdevcdso/">
+                                <ion-icon name="logo-github"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex flex-col space-y-2">
+                <div>
+                    <h1 class="text-center text-white text-lg font-bold">
+                        Menu
+                    </h1>
                 </div>
                 <div>
-                    <h3 class="parcourir-site text-center mb-12 mobile-text">
-                        Pour parcourir mon site, veuillez choisir l'une des options ci-dessous :
-                    </h3>
-                    <div class="options_menu flex flex-row justify-center items-center top-1\/2 w-full h-1\/2">
-                        <a href="presentation.html">
-                            <div class="mx-2">
-                                <button class="btn">
-                                    Présentation de la société
-                                </button>
-                            </div>
-                        </a>
-                        <a href="projets.html">
-                            <div class="mx-2">
-                                <button class="btn">
-                                    Projets
-                                </button>
-                            </div>
-                        </a>
-                        <a href="veille.html">
-                            <div class="mx-2">
-                                <button class="btn">
-                                    Veille informatique
-                                </button>
-                            </div>
-                        </a>
-                        <a href="a-propos.html">
-                            <div class="mx-2">
-                                <button class="btn">
-                                    A propos
-                                </button>
-                            </div>
-                        </a>
-                    </div>
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="index.html">Accueil</a></li>
+                        <li class="menu__item"><a class="menu__link" href="presentation.html">Présentation de la société</a></li>
+                        <li class="menu__item"><a class="menu__link" href="projets.html">Projets</a></li>
+                        <li class="menu__item"><a class="menu__link" href="veille.html">Veille informatique</a></li>
+                        <li class="menu__item"><a class="menu__link" href="a-propos.html">A propos</a></li>
+                    </ul>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
 
-    <style>
-        body  {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            <div class="divider"></div>
 
-            /* Dark mode colors and gradient */
-            background: #121212; /* Fallback for browsers that don't support gradients */
-            background: linear-gradient(
-                135deg,
-                #121212 25%,
-                #1a1a1a 25%,
-                #1a1a1a 50%,
-                #121212 50%,
-                #121212 75%,
-                #1a1a1a 75%,
-                #1a1a1a
-            );
-            background-size: 40px 40px;
-
-            /* Animation */
-            animation: move 4s linear infinite;             
-        }
-
-        @keyframes move {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 40px 40px;
-            }
-        }
-
-    </style>
+            <div class="relative flex flex-wrap justify-center items-center text-white sfthin" style="font-size: larger;">
+                &copy; Marion Candusso | Tout droit réservé
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
